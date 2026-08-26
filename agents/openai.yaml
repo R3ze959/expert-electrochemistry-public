@@ -1,0 +1,4 @@
+interface:
+  display_name: "Battery Evidence & Mechanism Audit"
+  short_description: "Claim audits for battery materials research"
+  default_prompt: "Use $expert-electrochemistry-public to audit this battery-materials claim, separate evidence quality from inference, and identify the decisive next test. If literature is needed and I have not supplied sources, first ask once in plain language whether I have a library to use."
