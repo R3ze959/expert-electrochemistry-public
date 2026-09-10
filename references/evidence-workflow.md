@@ -6,7 +6,7 @@ Use this reference when an answer depends on papers, standards, quantitative com
 
 Where evidence came from and how trustworthy it is are different questions. A user-provided raw trace is direct but may be uncalibrated; a well-conducted systematic synthesis may be less direct but more reliable for a population-level claim.
 
-Record provenance, then rate each decisive evidence item on:
+Record provenance and actual inspection depth (raw data, original full text, corpus-only text, abstract/metadata, or unavailable), separately from relevance to the user's system. Local source location is not a quality advantage. Then assess each decisive evidence item on:
 
 1. **Directness:** does the measurement observe the claimed quantity or only a proxy?
 2. **Method validity:** calibration, controls, assumptions, artifacts, residuals, and detection limits.
@@ -15,7 +15,7 @@ Record provenance, then rate each decisive evidence item on:
 5. **Consistency:** agreement with orthogonal methods and credible external studies.
 6. **Bias risk:** selective reporting, flexible analysis, conflicts, missing failures, and publication bias.
 
-Use qualitative ratings such as high, medium, low, or unknown only when their basis is stated. “Observed” never means automatically reliable or causal.
+Use qualitative ratings such as high, medium, low, or unknown only when their basis is stated. Do not invent numerical confidence probabilities. Deduplicate versions, supporting information, and reports of the same underlying experiment; multiple agents citing one experiment do not add independent evidence. “Observed” never means automatically reliable or causal.
 
 ## Search and Verification
 
@@ -41,8 +41,8 @@ Inspect the original source whenever a conclusion depends on:
 
 For multi-source synthesis, use compact rows:
 
-| Claim | Provenance | System and method | Result | Directness | Validity | Scope match | Independence | Bias/caveat |
-|---|---|---|---|---|---|---|---|---|
+| Claim | Source and exact locator | Inspection depth | System and method | Result and normalization | Validity and scope | Independence | Caveat / alternative |
+|---|---|---|---|---|---|---|---|
 
 Do not collapse different compositions, cell types, temperatures, loadings, pressure histories, or normalization bases into one comparison. Preserve contradictions and test whether they arise from methods, specimens, conditions, or genuinely conflicting evidence.
 
@@ -59,3 +59,5 @@ Before finalizing a strong statement, ask:
 - Would missing metadata make a numerical comparison irreproducible?
 
 Narrow the wording whenever the available evidence does not support the stronger scope.
+
+For numerical or technique-specific conclusions, use [measurement-claim-checks.md](measurement-claim-checks.md). For a useful independent review, use [astra-multi-agent.md](astra-multi-agent.md); the main agent verifies conclusion-changing sources. A claim-checking tool reports rule findings, not scientific truth.

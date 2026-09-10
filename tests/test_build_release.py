@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -22,11 +23,20 @@ def environment() -> dict[str, str]:
 class BuildReleaseTests(unittest.TestCase):
     def test_build_is_reproducible_and_audited(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "expert-electrochemistry-public"
+            # Keep every source file except root Git metadata. Unexpected files
+            # must still fail the release audit rather than be silently omitted.
+            shutil.copytree(
+                ROOT,
+                root,
+                symlinks=True,
+                ignore=lambda directory, names: [".git"] if Path(directory) == ROOT else [],
+            )
             first = Path(temporary) / "first.zip"
             second = Path(temporary) / "second.zip"
             for output in (first, second):
                 result = subprocess.run(
-                    [sys.executable, str(SCRIPT), "--root", str(ROOT), "--output", str(output)],
+                    [sys.executable, str(SCRIPT), "--root", str(root), "--output", str(output)],
                     capture_output=True,
                     text=True,
                     env=environment(),
@@ -55,6 +65,24 @@ class BuildReleaseTests(unittest.TestCase):
             )
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("unlisted file", result.stderr + result.stdout)
+            self.assertFalse(output.exists())
+
+    def test_git_metadata_is_not_a_release_file(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "synthetic-skill"
+            root.mkdir()
+            (root / "release-files.txt").write_text("release-files.txt\n", encoding="utf-8")
+            (root / ".git").mkdir()
+            (root / ".git" / "config").write_text("synthetic metadata\n", encoding="utf-8")
+            output = Path(temporary) / "blocked.zip"
+            result = subprocess.run(
+                [sys.executable, str(SCRIPT), "--root", str(root), "--output", str(output)],
+                capture_output=True,
+                text=True,
+                env=environment(),
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("unlisted file: .git/config", result.stderr + result.stdout)
             self.assertFalse(output.exists())
 
 

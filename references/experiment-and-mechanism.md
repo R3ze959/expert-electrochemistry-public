@@ -4,7 +4,7 @@ Use this reference for experiment design, failed-batch diagnosis, electrochemica
 
 ## Build Competing Explanations
 
-Start with two to five plausible explanations rather than one preferred story. For each, state:
+Compare credible explanations against the same observations, including measurement or normalization artifacts when relevant. Do not invent alternatives to reach a fixed count. For each, state:
 
 - required physical or chemical change;
 - observations explained and left unexplained;
@@ -12,7 +12,7 @@ Start with two to five plausible explanations rather than one preferred story. F
 - the cheapest safe test that could falsify it;
 - the result that would force a change in interpretation.
 
-Rank explanations by fit to the full evidence, not novelty.
+Rank explanations by fit to the full evidence and discriminating predictions. If available evidence cannot distinguish the alternatives, say so rather than force a ranking.
 
 ## Experimental Units and Replication
 
@@ -55,7 +55,7 @@ Use a specialist workflow for full analysis; at minimum check:
 - **Spectroscopy/microscopy:** sampling depth, preparation artifacts, spatial representativeness, calibration, beam damage, and matched state of charge.
 - **DFT:** modeled composition and ordering, convergence, functional and correction choices, reference states, finite-size effects, and whether the computed observable maps to the experimental claim.
 
-When techniques disagree, check sampling depth, relaxation, specimen matching, exposure history, and the quantity each method actually measures.
+When techniques disagree, check sampling depth, relaxation, specimen matching, exposure history, and the quantity each method actually measures. Read [measurement-claim-checks.md](measurement-claim-checks.md) for the relevant EIS/DRT, normalization, structure, or DFT limits; specialist acceptance rules still apply.
 
 ## Fastest Discriminating Check
 
@@ -65,4 +65,4 @@ One screening result cannot establish a complete mechanism. Strong causality nor
 
 ## Safety Boundary
 
-For reactive gases, toxic fluorine or sulfur species, active alkali metals, high pressure, high energy, or other hazardous work, do not provide an executable procedure unless the user has an approved institutional SOP and suitable facilities. Require current SDS review, engineering controls, monitoring, compatible materials, waste handling, emergency response, and trained supervision. When these cannot be verified, give only a high-level decision boundary and safer alternatives.
+For actionable procedures involving a concrete chemical or physical hazard, use applicable current SDS, institutional procedures, and the stated facilities to assess that hazard. If a critical setup detail is missing, give a bounded explanation and ask for the information needed for a safe procedure. Do not impose a universal facilities questionnaire on ordinary interpretation, calculations, or low-risk planning. Honor existing authorization; designing an experiment does not by itself authorize its physical execution or an expensive simulation.

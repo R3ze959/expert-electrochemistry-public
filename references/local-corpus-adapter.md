@@ -4,7 +4,7 @@ This skill ships with no corpus. Use a local corpus only when the user explicitl
 
 ## User-facing setup
 
-Do not ask the user to prepare JSONL before learning what library they have. Ask for the library type and its path or connection method in plain language. If it is already compatible, use it read-only. If conversion is required, explain that briefly and obtain authorization before creating a temporary export outside the skill directory.
+Do not ask the user to prepare JSONL before learning what library they have. Ask for the library type and its path or connection method in plain language. If it is already compatible, use it read-only. If conversion is required, explain that briefly and create an export outside the skill directory only within the user's task authorization. Do not ask again when the user already requested that export. An optional library setup must not block useful work using other available sources.
 
 The JSONL format below is the built-in interchange format, not wording that must be shown to every user.
 

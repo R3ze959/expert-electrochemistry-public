@@ -1,4 +1,6 @@
 interface:
   display_name: "Battery Evidence & Mechanism Audit"
-  short_description: "Claim audits for battery materials research"
-  default_prompt: "Use $expert-electrochemistry-public to audit this battery-materials claim, separate evidence quality from inference, and identify the decisive next test. If literature is needed and I have not supplied sources, first ask once in plain language whether I have a library to use."
+  short_description: "Source checks, adaptive depth, and independent research agents"
+  default_prompt: "Use $expert-electrochemistry-public to investigate this battery-materials claim, verify decisive sources, use independent subagents where useful, and give a bounded conclusion with the next discriminating control."
+policy:
+  allow_implicit_invocation: true

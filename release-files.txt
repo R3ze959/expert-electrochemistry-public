@@ -1,14 +1,17 @@
 .gitignore
+CHANGELOG.md
 LICENSE
 README.md
 SKILL.md
 VERSION
 agents/openai.yaml
 evals/behavior-cases.json
+references/astra-multi-agent.md
 references/deep-research.md
 references/evidence-workflow.md
 references/experiment-and-mechanism.md
 references/local-corpus-adapter.md
+references/measurement-claim-checks.md
 release-files.txt
 scripts/audit_release_privacy.py
 scripts/build_release.py
