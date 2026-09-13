@@ -140,3 +140,14 @@ $expert-electrochemistry-public 评估这个电池材料的机理结论是否被
 Released under the [MIT License](LICENSE). The repository contains only original guidance and code; no third-party paper content is distributed.
 
 本项目使用 [MIT License](LICENSE) 发布。仓库仅包含原创方法指南和代码，不发布任何第三方论文内容。
+
+<details>
+<summary>☕ 支持作者</summary>
+
+如果这个项目对你有帮助，欢迎自愿赞赏，支持后续维护。感谢你的支持！
+
+使用微信扫描下方收款码：
+
+<img src="https://raw.githubusercontent.com/R3ze959/eis-drt-batch-analysis-skill/main/.github/assets/wechat-pay.jpg" alt="微信赞赏收款码" width="280" />
+
+</details>
